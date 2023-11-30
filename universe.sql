@@ -54,7 +54,7 @@ CREATE TABLE public.galaxy (
     number_of_stars integer NOT NULL,
     visible_to_naked_eye boolean NOT NULL,
     constellation text NOT NULL,
-    name text NOT NULL
+    name VARCHAR NOT NULL
 );
 
 
@@ -88,7 +88,7 @@ ALTER SEQUENCE public.galaxy_planet_id_seq OWNED BY public.galaxy.galaxy_id;
 
 CREATE TABLE public.moon (
     moon_id integer NOT NULL,
-    name text,
+    name VARCHAR,
     planet_name text,
     diameter integer NOT NULL,
     density integer
@@ -124,7 +124,7 @@ ALTER SEQUENCE public.moon_moon_id_seq OWNED BY public.moon.moon_id;
 --
 
 CREATE TABLE public.planet (
-    name text NOT NULL,
+    name VARCHAR NOT NULL,
     planet_id integer NOT NULL,
     diameter integer NOT NULL,
     gravity numeric(4,1) NOT NULL,
@@ -164,7 +164,7 @@ ALTER SEQUENCE public.planet_planet_id_seq OWNED BY public.planet.planet_id;
 
 CREATE TABLE public.star (
     star_id integer NOT NULL,
-    name text,
+    name VARCHAR,
     galaxy_name text,
     type text NOT NULL,
     colour text NOT NULL,
